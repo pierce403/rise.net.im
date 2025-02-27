@@ -1,0 +1,27 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* PWA Install Button Animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+  }
+}
+
+button:focus {
+  animation: pulse 1.5s infinite;
+}
