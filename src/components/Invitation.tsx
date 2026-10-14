@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useInvitation } from '../contexts/InvitationContext';
 
 const Invitation: React.FC = () => {
-  const { invitations, createInvitation, useInvitation: useInviteCode } = useInvitation();
+  const { invitations, createInvitation, useInvitation: redeemInviteCode } = useInvitation();
   const [inviteCode, setInviteCode] = useState('');
   const [joinError, setJoinError] = useState('');
   
@@ -19,7 +19,7 @@ const Invitation: React.FC = () => {
       return;
     }
     
-    const success = useInviteCode(inviteCode);
+    const success = redeemInviteCode(inviteCode);
     if (success) {
       setInviteCode('');
       setJoinError('');
